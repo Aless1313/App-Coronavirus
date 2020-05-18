@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CoronavirusApp.Recomendaciones"
+             Title="Recomendaciones">
+    
+    <StackLayout Margin="10,10,10,10">
+        <Label Text="MEDIDAS DE PREVENCIÓN" Style="{StaticResource MainBodyLabel}" FontSize="Medium"/>
+
+        <ListView ItemsSource="{Binding Monkeys}"
+          HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell IsEnabled="False">
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.RowSpan="2"
+                           Source="{Binding ImageUrl}"
+                           Aspect="AspectFill"
+                           HeightRequest="60"
+                           WidthRequest="60" />
+                            
+                            <Label Grid.Column="1"
+                           Text="{Binding Name}"
+                           FontAttributes="Bold" Style="{StaticResource ProfileNameLabel}" />
+                            <Label Grid.Row="1"
+                           Grid.Column="1"
+                           Text="{Binding Location}"
+                           VerticalOptions="End" Style="{StaticResource ProfileNameLabel}" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Información completa" x:Name="info" Clicked="info_Clicked" Style="{StaticResource FollowButton}"/>
+        <Label Text="Programado por: Alessandro Elizondo" Style="{StaticResource StatsNumberLabel}" VerticalOptions="End"/>
+        <Label Text="Información e imagenes: coronavirus.gob.mx" Style="{StaticResource StatsNumberLabel}" VerticalOptions="End"/>
+    </StackLayout>
+</ContentPage>

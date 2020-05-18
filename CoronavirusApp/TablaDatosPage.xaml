@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Información por país"
+             x:Class="CoronavirusApp.TablaDatosPage"
+            >
+    <StackLayout>
+
+        <Label Text="*Esta lista se encuentra en orden por casos confirmados" Style="{StaticResource ProfileTagLabel}"/>
+
+
+        <ListView x:Name="lstDatos" RowHeight="100" SeparatorColor="Blue">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell IsEnabled="False">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Label Text="{Binding CountryCountry}" HorizontalTextAlignment="Center"
+                                       Style="{StaticResource ProfileNameLabel}"/>
+                            </StackLayout>
+
+                            <FlexLayout Direction="Column" AlignItems="Center" Grid.Column="1" Wrap="Wrap" JustifyContent="Center">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                </Grid>
+                                <StackLayout Grid.Row="1">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                    </Grid>
+                                    <Label Text="Casos confirmados: " Grid.Column="0" HorizontalTextAlignment="Center"
+                                             Style="{StaticResource MainBodyLabel}"/>
+                                    <Label Text="{Binding TotalConfirmed}" Grid.Column="1" HorizontalTextAlignment="Center"
+                                            Style="{StaticResource StatsNumberLabel}" />
+                                </StackLayout>
+                                <StackLayout Grid.Row="1">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                    </Grid>
+                                    <Label Text="Muertes: "  Grid.Column="0" HorizontalTextAlignment="Center"
+                                             Style="{StaticResource MainBodyLabel}"/>
+                                    <Label Text="{Binding TotalDeaths}" Grid.Column="1" HorizontalTextAlignment="Center"
+                                           Style="{StaticResource StatsNumberLabel}"/>
+                                </StackLayout>
+                                <StackLayout Grid.Row="2">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                    </Grid>
+                                    <Label Text="Recuperados: "  Grid.Column="0" HorizontalTextAlignment="Center"
+                                           Style="{StaticResource MainBodyLabel}"/>
+                                    <Label Text="{Binding TotalRecovered}" Grid.Column="1" HorizontalTextAlignment="Center"
+                                           Style="{StaticResource StatsNumberLabel}"/>
+                                </StackLayout>
+                            </FlexLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CoronavirusApp.MainPage"
+             BackgroundImageSource="fondoo.png">
+
+    <StackLayout>
+        <Button Text="Datos por país" x:Name="btntabla" Clicked="btntabla_Clicked" VerticalOptions="EndAndExpand" CornerRadius="15" BackgroundColor="White" Padding="3" Margin="20,5" Style="{StaticResource FollowButton}"/>
+        <Button Text="Curva de méxico" x:Name="btncurvamxn" Clicked="btncurvamxn_Clicked" VerticalOptions="End" CornerRadius="15" BackgroundColor="White" Padding="3" Margin="20,5" Style="{StaticResource FollowButton}"/>
+        <Button Text="Curva de otros paises" x:Name="btncurvapais" Clicked="btncurvapais_Clicked" VerticalOptions="End" CornerRadius="15" BackgroundColor="White" Padding="3" Margin="20,5" Style="{StaticResource FollowButton}"/>
+        <Button Text="Sintomas" x:Name="btnsintomas" Clicked="btnsintomas_Clicked" VerticalOptions="End" CornerRadius="15" BackgroundColor="White" Padding="3" Margin="20,5" Style="{StaticResource FollowButton}"/>
+        <Button Text="Recomendaciones" x:Name="btnrecomendaciones" Clicked="btnrecomendaciones_Clicked"  VerticalOptions="End" CornerRadius="15" BackgroundColor="White" Padding="3" Margin="20,5,20,10" Style="{StaticResource FollowButton}"/>
+       
+    </StackLayout>
+
+</ContentPage>

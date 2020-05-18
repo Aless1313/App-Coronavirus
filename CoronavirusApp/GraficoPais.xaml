@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
+             
+             mc:Ignorable="d"
+             x:Class="CoronavirusApp.GraficoPais">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Text="Selecciona el País" Grid.Row="0"/>
+            <Picker x:Name="pkrpais" Grid.Row="1" SelectedIndexChanged="pkrpais_SelectedIndexChanged"/>
+            <oxy:PlotView VerticalOptions="Center" HorizontalOptions="Center" x:Name="plotgrafica" Grid.Row="2"/>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
